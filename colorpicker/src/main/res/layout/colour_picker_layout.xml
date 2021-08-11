@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/color_display_tab"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hex_code_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ABEDEDED"
+        android:padding="10dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/color_display_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/red_slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="7dp"
+        android:valueFrom="0"
+        android:valueTo="255"
+        app:labelBehavior="floating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_display_tab"
+        app:thumbColor="@color/red"
+        app:trackColorActive="@color/red" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/green_slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="7dp"
+        android:valueFrom="0"
+        android:valueTo="255"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/red_slider"
+        app:thumbColor="@color/green"
+        app:trackColorActive="@color/green" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/blue_slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="7dp"
+        android:valueFrom="0"
+        android:valueTo="255"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/green_slider"
+        app:thumbColor="@color/blue"
+        app:trackColorActive="@color/blue" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/hex_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:gravity="center"
+        android:hint="@string/hex_code"
+        android:maxEms="7"
+        app:layout_constraintEnd_toStartOf="@+id/half_split_guide_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blue_slider" />
+
+    <Button
+        android:id="@+id/submit_button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:text="@string/select_button_text"
+        app:icon="@drawable/ic_baseline_check_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hex_code"
+        app:layout_constraintTop_toBottomOf="@+id/blue_slider" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/half_split_guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

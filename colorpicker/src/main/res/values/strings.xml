@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hex_code">#Hex Code</string>
+    <string name="select_button_text">Select</string>
+</resources>
